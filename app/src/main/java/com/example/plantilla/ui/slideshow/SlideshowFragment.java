@@ -21,7 +21,7 @@ import com.example.plantilla.modelo.Inmueble;
 public class SlideshowFragment extends Fragment {
     private EditText etdireccion,etprecio;
     private ImageView evimage;
-    private SlideshowViewModel vm;
+    private SlideshowViewModel vm, pp;
     RecyclerView recyclerInmuebles ;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
