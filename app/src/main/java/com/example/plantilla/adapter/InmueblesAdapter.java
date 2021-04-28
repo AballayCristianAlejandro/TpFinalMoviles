@@ -14,50 +14,45 @@ import com.example.plantilla.modelo.Inmueble;
 
 import java.util.ArrayList;
 
-public class InmueblesAdapter extends RecyclerView.Adapter<InmueblesAdapter.ViewHolderInmuebles> {
+public class InmueblesAdapter extends RecyclerView.Adapter<InmueblesAdapter.ViewHolderInmmuebles> {
 
-    ArrayList<Inmueble> listaInmuebles ;
-    private View.OnClickListener listener;
-    public InmueblesAdapter(ArrayList<Inmueble> listaInmuebles) {
-        this.listaInmuebles = listaInmuebles;
+    ArrayList<Inmueble> listainmueble ;
+
+    public InmueblesAdapter(ArrayList<Inmueble> listainmueble) {
+        this.listainmueble = listainmueble;
     }
 
     @NonNull
     @Override
-    public InmueblesAdapter.ViewHolderInmuebles onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public InmueblesAdapter.ViewHolderInmmuebles onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_list_inmuebles,null,false);
-
-        view.setOnClickListener((View.OnClickListener) this);
-
-
-        return new ViewHolderInmuebles(view);
+        return new ViewHolderInmmuebles(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull InmueblesAdapter.ViewHolderInmuebles holder, int position) {
+    public void onBindViewHolder(@NonNull InmueblesAdapter.ViewHolderInmmuebles holder, int position) {
 
+
+        holder.etdireccion.setText(listainmueble.get(position).getDireccion());
+        holder.etprecio.setText(listainmueble.get(position).getUso());
+       // holder.ivimage.setImageResource( listainmueble.get(position).getImagen());
     }
 
     @Override
     public int getItemCount() {
-
-            return listaInmuebles.size();
+        return listainmueble.size();
     }
 
+    public class ViewHolderInmmuebles extends RecyclerView.ViewHolder {
 
-
-    public class ViewHolderInmuebles extends RecyclerView.ViewHolder {
-        TextView etiNombre, etiInfo;
+        TextView etdireccion, etprecio;
         ImageView ivimage;
-
-        public ViewHolderInmuebles(@NonNull View itemView) {
+        public ViewHolderInmmuebles(@NonNull View itemView) {
             super(itemView);
-
-            etiNombre= (TextView) itemView.findViewById(R.id.idnombre);
-            etiInfo = (TextView) itemView.findViewById(R.id.idinfo);
+            etdireccion= (TextView) itemView.findViewById(R.id.iddireccion);
+            etprecio = (TextView) itemView.findViewById(R.id.idiprecio);
             ivimage= (ImageView) itemView.findViewById(R.id.idimage);
-
         }
     }
 }

@@ -3,7 +3,7 @@ package com.example.plantilla.modelo;
 import java.io.Serializable;
 import java.util.Objects;
 
-public class Inmueble implements Serializable {
+public class  Inmueble implements Serializable {
 
     private int idInmueble;
     private String direccion;
