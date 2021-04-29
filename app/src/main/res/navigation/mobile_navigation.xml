@@ -15,7 +15,11 @@
         android:id="@+id/nav_gallery"
         android:name="com.example.plantilla.ui.Inquilinos.Inquilinos"
         android:label="Inquilinos"
-        tools:layout="@layout/fragment_inquilinos" />
+        tools:layout="@layout/fragment_inquilinos" >
+        <action
+            android:id="@+id/action_nav_gallery_to_inquilino"
+            app:destination="@id/inquilino" />
+    </fragment>
 
     <fragment
         android:id="@+id/nav_slideshow"
@@ -36,4 +40,9 @@
         android:name="com.example.plantilla.ui.Inmuebles.InformacionInmueble"
         android:label="fragment_informacion_inmueble"
         tools:layout="@layout/fragment_informacion_inmueble" />
+    <fragment
+        android:id="@+id/inquilino"
+        android:name="com.example.plantilla.ui.Inquilinos.Inquilino"
+        android:label="fragment_inquilino"
+        tools:layout="@layout/fragment_inquilino" />
 </navigation>
