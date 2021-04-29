@@ -1,4 +1,4 @@
-package com.example.plantilla.ui.home;
+package com.example.plantilla.ui.Perfil;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -6,11 +6,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageView;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
@@ -18,10 +15,10 @@ import androidx.lifecycle.ViewModelProvider;
 import com.example.plantilla.R;
 import com.example.plantilla.modelo.Propietario;
 
-public class HomeFragment extends Fragment {
+public class Perfil extends Fragment {
 
     private EditText etnombre, etapellido, etmail, etcodigo, etdni, etcontrasenia, ettelefono;
-    private HomeViewModel vm;
+    private PerfilViewModel vm;
     private Button bteditar;
     private int orden =1;
 
@@ -29,8 +26,8 @@ public class HomeFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
 
-        vm = new ViewModelProvider(this).get(HomeViewModel.class);
-        View root = inflater.inflate(R.layout.fragment_home, container, false);
+        vm = new ViewModelProvider(this).get(PerfilViewModel.class);
+        View root = inflater.inflate(R.layout.fragment_perfil, container, false);
         inicializarVista(root);
         vm.getPropietarioMutable().observe(getViewLifecycleOwner(), new Observer<Propietario>() {
 
@@ -46,9 +43,10 @@ public class HomeFragment extends Fragment {
 
                 bteditar.setOnClickListener(new View.OnClickListener() {
                     @Override
-                    public void onClick(View v) {
+                    public void onClick(View v) { //lo puse que el metodo actualizardato() necesita un propietario
                             habilitar ();
                            vm.actualizarDatos(propietario);
+                        bteditar.setText("Guardar");
                     }
                 });
             }

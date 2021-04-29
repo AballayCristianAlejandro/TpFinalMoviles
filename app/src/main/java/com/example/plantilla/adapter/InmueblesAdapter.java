@@ -9,16 +9,19 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.example.plantilla.R;
 import com.example.plantilla.modelo.Inmueble;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class InmueblesAdapter extends RecyclerView.Adapter<InmueblesAdapter.ViewHolderInmmuebles> {
 
-    ArrayList<Inmueble> listainmueble ;
+    List<Inmueble> listainmueble ;
 
-    public InmueblesAdapter(ArrayList<Inmueble> listainmueble) {
+    public InmueblesAdapter(List<Inmueble> listainmueble) {
         this.listainmueble = listainmueble;
     }
 
@@ -36,7 +39,12 @@ public class InmueblesAdapter extends RecyclerView.Adapter<InmueblesAdapter.View
 
         holder.etdireccion.setText(listainmueble.get(position).getDireccion());
         holder.etprecio.setText(listainmueble.get(position).getUso());
-       // holder.ivimage.setImageResource( listainmueble.get(position).getImagen());
+
+        /*Glide.with()
+                .load(listainmueble.get(position).getImagen())
+                .diskCacheStrategy(DiskCacheStrategy.ALL)
+                .into(holder.ivimage);*/
+
     }
 
     @Override

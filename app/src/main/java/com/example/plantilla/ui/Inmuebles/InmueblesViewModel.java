@@ -1,22 +1,22 @@
-package com.example.plantilla.ui.slideshow;
+package com.example.plantilla.ui.Inmuebles;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
 import com.example.plantilla.modelo.Inmueble;
-import com.example.plantilla.modelo.Propietario;
 import com.example.plantilla.request.ApiClient;
 
 import java.util.ArrayList;
+import java.util.List;
 
-public class SlideshowViewModel extends ViewModel {
+public class InmueblesViewModel extends ViewModel {
 
     private ApiClient api=new ApiClient();
-    private ArrayList<Inmueble> inmu;
-    private MutableLiveData<Inmueble> inmuebleMutable;
 
-    public LiveData<Inmueble> getinmuebleMutable (){
+    private MutableLiveData<List<Inmueble>>inmuebleMutable;
+
+    public LiveData<List<Inmueble>> getinmuebleMutable (){
         if (inmuebleMutable == null){
             inmuebleMutable = new MutableLiveData<>();
         }
@@ -24,7 +24,8 @@ public class SlideshowViewModel extends ViewModel {
     };
 
     public void ObtenerInmueble(){
-
-        inmu=api.obtenerPropiedadesAlquiladas();
+        ArrayList<Inmueble> inmu;
+        inmu=api.obtnerPropiedades();
+        inmuebleMutable.setValue(inmu);
     }
 }

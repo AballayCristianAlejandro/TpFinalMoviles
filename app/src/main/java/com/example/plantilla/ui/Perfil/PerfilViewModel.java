@@ -1,4 +1,4 @@
-package com.example.plantilla.ui.home;
+package com.example.plantilla.ui.Perfil;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
@@ -7,7 +7,7 @@ import androidx.lifecycle.ViewModel;
 import com.example.plantilla.modelo.Propietario;
 import com.example.plantilla.request.ApiClient;
 
-public class HomeViewModel extends ViewModel {
+public class PerfilViewModel extends ViewModel {
     private ApiClient api=new ApiClient();
     private Propietario prop, propietarioModificado;
     private MutableLiveData<Propietario> propietarioMutable;
