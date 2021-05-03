@@ -1,4 +1,4 @@
-package com.example.plantilla.ui.Perfil;
+package com.example.plantilla.ui.viewmodel;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
@@ -22,14 +22,15 @@ public class PerfilViewModel extends ViewModel {
 
 
         prop = api.obtenerUsuarioActual();
-
         propietarioMutable.setValue(prop);
 
 
     }
     public void actualizarDatos(Propietario propietaio){
+        propietarioModificado = propietaio;
+         api.actualizarPerfil(propietarioModificado);
+         propietarioMutable.setValue(propietarioModificado);
 
-         api.actualizarPerfil( propietaio) ;
 
     }
 }

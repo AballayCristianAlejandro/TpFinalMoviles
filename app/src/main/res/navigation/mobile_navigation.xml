@@ -17,8 +17,8 @@
         android:label="Inquilinos"
         tools:layout="@layout/fragment_inquilinos" >
         <action
-            android:id="@+id/action_nav_gallery_to_inquilino"
-            app:destination="@id/inquilino" />
+            android:id="@+id/action_nav_gallery_to_infoInquilino"
+            app:destination="@id/infoInquilino" />
     </fragment>
 
     <fragment
@@ -41,8 +41,8 @@
         android:label="fragment_informacion_inmueble"
         tools:layout="@layout/fragment_informacion_inmueble" />
     <fragment
-        android:id="@+id/inquilino"
-        android:name="com.example.plantilla.ui.Inquilinos.Inquilino"
-        android:label="fragment_inquilino"
-        tools:layout="@layout/fragment_inquilino" />
+        android:id="@+id/infoInquilino"
+        android:name="com.example.plantilla.ui.Inquilinos.InfoInquilino"
+        android:label="info_inquilino_fragment"
+        tools:layout="@layout/info_inquilino_fragment" />
 </navigation>

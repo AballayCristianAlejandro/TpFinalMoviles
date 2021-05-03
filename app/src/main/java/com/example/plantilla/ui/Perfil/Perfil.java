@@ -14,6 +14,7 @@ import androidx.lifecycle.ViewModelProvider;
 
 import com.example.plantilla.R;
 import com.example.plantilla.modelo.Propietario;
+import com.example.plantilla.ui.viewmodel.PerfilViewModel;
 
 public class Perfil extends Fragment {
 
@@ -45,8 +46,9 @@ public class Perfil extends Fragment {
                     @Override
                     public void onClick(View v) { //lo puse que el metodo actualizardato() necesita un propietario
                             habilitar ();
+                            bteditar.setText("Guardar");
                            vm.actualizarDatos(propietario);
-                        bteditar.setText("Guardar");
+
                     }
                 });
             }

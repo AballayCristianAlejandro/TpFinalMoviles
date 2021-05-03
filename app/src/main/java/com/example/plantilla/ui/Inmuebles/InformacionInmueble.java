@@ -3,12 +3,15 @@ package com.example.plantilla.ui.Inmuebles;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.ViewModelProvider;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 
 import com.example.plantilla.R;
+import com.example.plantilla.ui.viewmodel.InmueblesViewModel;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -16,6 +19,9 @@ import com.example.plantilla.R;
  * create an instance of this fragment.
  */
 public class InformacionInmueble extends Fragment {
+    private EditText etnombre,etapellido,etmail,etcodigo,ettelefono,etgarante,ettelefonnogrante;
+
+    private InmueblesViewModel vm;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -60,7 +66,34 @@ public class InformacionInmueble extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_informacion_inmueble, container, false);
+        vm = new ViewModelProvider(this).get(InmueblesViewModel.class);
+        View root = inflater.inflate(R.layout.fragment_informacion_inmueble, container, false);
+       // inicializarVista(root);
+       /* vm.getinmuebleMutable().observe(getViewLifecycleOwner(), new Observer<Inquilino>() {
+            @Override
+            public void onChanged(Inquilino inquilino) {
+                etapellido.setText(inquilino.getApellido());
+                etnombre.setText(inquilino.getNombre());
+                etmail.setText(inquilino.getEmail());
+                etcodigo.setText(inquilino.getIdInquilino() +"");
+                etgarante.setText(inquilino.getNombreGarante());
+                ettelefonnogrante.setText(inquilino.getTelefonoGarante());
+                 ettelefono.setText(inquilino.getTelefono());
+
+            }
+        });*/
+        //vm.leerDatos();
+        return root;
     }
+
+  /*  public void inicializarVista(View root) {
+
+        etapellido = root.findViewById(R.id.etapellido);
+        etnombre = root.findViewById(R.id.etnombre);
+        etmail = root.findViewById(R.id.etmail);
+        etcodigo = root.findViewById(R.id.etcodigo);
+        etgarante = root.findViewById(R.id.etgarante);
+        ettelefonnogrante = root.findViewById(R.id.ettelefonogarante);
+        ettelefono = root.findViewById(R.id.ettelefono);
+    }*/
 }

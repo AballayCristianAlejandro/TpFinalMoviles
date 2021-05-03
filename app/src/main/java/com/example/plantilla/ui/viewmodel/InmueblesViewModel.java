@@ -1,4 +1,4 @@
-package com.example.plantilla.ui.Inmuebles;
+package com.example.plantilla.ui.viewmodel;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;

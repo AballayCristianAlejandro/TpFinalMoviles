@@ -7,19 +7,29 @@ import androidx.lifecycle.ViewModelProvider;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.hardware.Sensor;
+import android.hardware.SensorEvent;
+import android.hardware.SensorEventListener;
+import android.hardware.SensorManager;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
 import com.example.plantilla.R;
+import com.example.plantilla.ui.viewmodel.MainActivityViewModel;
 
-public class MainActivity extends AppCompatActivity {
+import java.util.List;
+
+public class MainActivity extends AppCompatActivity  {
 
     private EditText etUsuario;
     private EditText etPassword;
     private Button btBoton;
     private MainActivityViewModel vm ;
+    private SensorManager manager;
+    private List<Sensor> sensores;
+    private LeerSesores leerSesores;
 
 
     @Override
@@ -53,6 +63,23 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+         manager = (SensorManager) getSystemService(SENSOR_SERVICE);
+         sensores = manager.getSensorList(Sensor.TYPE_ACCELEROMETER);
+        if (sensores.size()>0){
+            manager.registerListener(leerSesores,sensores.get(0),SensorManager.SENSOR_DELAY_GAME);
+        }
+        leerSesores =  new LeerSesores();
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        manager.unregisterListener(leerSesores);
+    }
+
     public void inicializar(){
 
         etUsuario=findViewById(R.id.etUsuario);
@@ -64,5 +91,21 @@ public class MainActivity extends AppCompatActivity {
                 vm.verificarDatos(etUsuario.getText().toString(),etPassword.getText().toString());
             }
         });
+    }
+
+
+    private  class LeerSesores implements SensorEventListener {
+        @Override
+        public void onSensorChanged(SensorEvent event) {
+
+            float X = event.values[0];
+            float y = event.values[1];
+            float z = event.values[2];
+        }
+
+        @Override
+        public void onAccuracyChanged(Sensor sensor, int accuracy) {
+
+        }
     }
 }

@@ -1,4 +1,4 @@
-package com.example.plantilla.ui;
+package com.example.plantilla.ui.viewmodel;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.LiveData;
