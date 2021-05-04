@@ -1,5 +1,6 @@
 package com.example.plantilla.ui.Inquilinos;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -17,9 +18,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.plantilla.R;
 import com.example.plantilla.adapter.InmueblesAlquiladosAdapter;
 import com.example.plantilla.modelo.Inmueble;
-import com.example.plantilla.ui.Inmuebles.Inmuebles;
-import com.example.plantilla.ui.viewmodel.InmueblesViewModel;
-import com.example.plantilla.ui.viewmodel.InquilinosViewModel;
+import com.example.plantilla.viewmodel.InquilinosViewModel;
 
 import java.util.List;
 
@@ -44,7 +43,12 @@ public class Inquilinos extends Fragment {
             @Override
             public void onChanged(List<Inmueble> inmuebles) {
                 InmueblesAlquiladosAdapter adapter = new InmueblesAlquiladosAdapter(context,inmuebles);
-
+                adapter.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        startActivity(new Intent(getActivity(), InfoInquilino.class));
+                    }
+                });
                 recyclerInmueblesAlquildaos.setAdapter(adapter);
 
 

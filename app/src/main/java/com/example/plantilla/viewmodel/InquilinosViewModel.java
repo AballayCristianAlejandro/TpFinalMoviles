@@ -1,4 +1,4 @@
-package com.example.plantilla.ui.viewmodel;
+package com.example.plantilla.viewmodel;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
@@ -6,7 +6,6 @@ import androidx.lifecycle.ViewModel;
 
 import com.example.plantilla.modelo.Inmueble;
 import com.example.plantilla.request.ApiClient;
-import com.example.plantilla.ui.Inquilinos.Inquilinos;
 
 import java.util.ArrayList;
 import java.util.List;

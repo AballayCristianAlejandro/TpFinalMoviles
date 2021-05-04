@@ -1,11 +1,8 @@
-package com.example.plantilla.ui.viewmodel;
+package com.example.plantilla.viewmodel;
 
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
-
-import android.os.Bundle;
 
 import com.example.plantilla.modelo.Propietario;
 import com.example.plantilla.request.ApiClient;

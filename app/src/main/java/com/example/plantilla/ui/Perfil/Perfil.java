@@ -14,7 +14,7 @@ import androidx.lifecycle.ViewModelProvider;
 
 import com.example.plantilla.R;
 import com.example.plantilla.modelo.Propietario;
-import com.example.plantilla.ui.viewmodel.PerfilViewModel;
+import com.example.plantilla.viewmodel.PerfilViewModel;
 
 public class Perfil extends Fragment {
 

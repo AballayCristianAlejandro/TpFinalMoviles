@@ -18,10 +18,11 @@ import com.example.plantilla.ui.Inquilinos.Inquilinos;
 
 import java.util.List;
 
-public class InmueblesAlquiladosAdapter extends RecyclerView.Adapter<InmueblesAlquiladosAdapter.ViewHolderInmmueblesAlquilados>{
+public class InmueblesAlquiladosAdapter extends RecyclerView.Adapter<InmueblesAlquiladosAdapter.ViewHolderInmmueblesAlquilados>implements View.OnClickListener {
 
     private Inquilinos context;
     List<Inmueble> listainmueblesAlquilado;
+    private View.OnClickListener listener;
 
     public InmueblesAlquiladosAdapter(Inquilinos context, List<Inmueble> listainmueblesAlquilado) {
         this.context = context;
@@ -33,6 +34,7 @@ public class InmueblesAlquiladosAdapter extends RecyclerView.Adapter<InmueblesAl
     public InmueblesAlquiladosAdapter.ViewHolderInmmueblesAlquilados onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_list_inmuebles_alquilados,null,false);
+        view.setOnClickListener(this);
         return new ViewHolderInmmueblesAlquilados (view);
     }
 
@@ -53,6 +55,18 @@ public class InmueblesAlquiladosAdapter extends RecyclerView.Adapter<InmueblesAl
     @Override
     public int getItemCount() {
         return listainmueblesAlquilado.size();
+    }
+
+    public  void setOnClickListener(View.OnClickListener listener){
+        this.listener = listener;
+    }
+
+    @Override
+    public void onClick(View v) {
+        if (listener != null){
+
+            listener.onClick(v);
+        }
     }
 
     public class ViewHolderInmmueblesAlquilados extends RecyclerView.ViewHolder {

@@ -1,4 +1,4 @@
-package com.example.plantilla.ui;
+package com.example.plantilla.ui.login;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
@@ -17,7 +17,8 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import com.example.plantilla.R;
-import com.example.plantilla.ui.viewmodel.MainActivityViewModel;
+import com.example.plantilla.ui.MenuNavegable;
+import com.example.plantilla.viewmodel.MainActivityViewModel;
 
 import java.util.List;
 

@@ -11,7 +11,7 @@ import android.view.ViewGroup;
 import android.widget.EditText;
 
 import com.example.plantilla.R;
-import com.example.plantilla.ui.viewmodel.InmueblesViewModel;
+import com.example.plantilla.viewmodel.InmueblesViewModel;
 
 /**
  * A simple {@link Fragment} subclass.

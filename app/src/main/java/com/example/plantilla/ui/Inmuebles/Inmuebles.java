@@ -1,6 +1,5 @@
 package com.example.plantilla.ui.Inmuebles;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -19,7 +18,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.plantilla.R;
 import com.example.plantilla.adapter.InmueblesAdapter;
 import com.example.plantilla.modelo.Inmueble;
-import com.example.plantilla.ui.viewmodel.InmueblesViewModel;
+import com.example.plantilla.viewmodel.InmueblesViewModel;
 
 import java.util.List;
 

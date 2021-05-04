@@ -16,24 +16,32 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:src="@mipmap/ic_launcher" />
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:textAlignment="center">
+
             <TextView
                 android:id="@+id/iddireccion"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
                 android:text="NOMBRE"
-                android:textSize="25dp"
-                android:layout_marginTop="10dp"/>
+                android:textAlignment="center"
+                android:textColor="@color/wallet_bright_foreground_holo_dark"
+                android:textSize="25dp" />
+
             <TextView
                 android:id="@+id/idiprecio"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Descripcion"
                 android:layout_marginRight="15dp"
-                android:layout_marginBottom="15dp"/>
+                android:layout_marginBottom="15dp"
+                android:text="Descripcion"
+                android:textAlignment="center"
+                android:textColor="@color/wallet_bright_foreground_holo_dark" />
 
         </LinearLayout>
     </LinearLayout>

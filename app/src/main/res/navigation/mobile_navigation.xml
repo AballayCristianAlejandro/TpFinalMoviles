@@ -32,7 +32,7 @@
     </fragment>
     <fragment
         android:id="@+id/mapsFragment"
-        android:name="com.example.plantilla.MapsFragment"
+        android:name="com.example.plantilla.ui.home.MapsFragment"
         android:label="Inmobiliaria Karttem"
         tools:layout="@layout/fragment_maps" />
     <fragment
@@ -45,4 +45,9 @@
         android:name="com.example.plantilla.ui.Inquilinos.InfoInquilino"
         android:label="info_inquilino_fragment"
         tools:layout="@layout/info_inquilino_fragment" />
+    <fragment
+        android:id="@+id/logout"
+        android:name="com.example.plantilla.ui.login.Logout"
+        android:label="Logout"
+        tools:layout="@layout/logout_fragment" />
 </navigation>
